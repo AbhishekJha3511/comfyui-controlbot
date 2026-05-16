@@ -1,0 +1,11 @@
+{
+    "telegram_token": "8676018916:AAGdpNim12-mi7TUjcIcIhDs27TfYsUzcYs",
+    "allowed_users": [
+        123456789,
+        987654321,
+        1343910579
+    ],
+    "comfyui_server": "127.0.0.1:8188",
+    "workflow_file": "workflow_api.json",
+    "target_text_node_id": "6"
+}
