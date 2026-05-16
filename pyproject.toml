@@ -1,0 +1,8 @@
+[project]
+name = "comfyui-controlbot"
+version = "1.0.0"
+description = "This is a Comfyui node bot for controlling comfyui via telegram bot"
+
+[tool.comfy]
+PublisherId = "pat-9d944625-8641-4c23-bd68-9251ae0c6205" # Your unique Comfy publisher ID
+DisplayName = "comfyui-controlbot"
