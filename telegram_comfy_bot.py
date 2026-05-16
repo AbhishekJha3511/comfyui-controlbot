@@ -21,21 +21,28 @@ DEFAULT_CONFIG = {
 class ConfigManager:
     @staticmethod
     def load_config():
-        if not os.path.exists(CONFIG_FILE):
-            with open(CONFIG_FILE, 'w') as f:
+        # Make paths relative to the script location
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+        config_path = os.path.join(base_dir, CONFIG_FILE)
+        
+        if not os.path.exists(config_path):
+            with open(config_path, 'w') as f:
                 json.dump(DEFAULT_CONFIG, f, indent=4)
-            print(f"[Setup] Created '{CONFIG_FILE}'. Please fill in your Bot Token and User IDs, then restart.")
-            sys.exit(1)
+            print(f"[Setup] Created '{CONFIG_FILE}'. Please fill in your Bot Token and restart ComfyUI.")
+            return None # Return None instead of crashing ComfyUI
             
-        with open(CONFIG_FILE, 'r') as f:
+        with open(config_path, 'r') as f:
             config = json.load(f)
             
         if config["telegram_token"] == "YOUR_TELEGRAM_BOT_TOKEN_HERE":
             print(f"[Error] Please update the 'telegram_token' inside {CONFIG_FILE}")
-            sys.exit(1)
+            return None # Return None instead of crashing ComfyUI
+            
+        # Update workflow path to be absolute
+        config["workflow_file"] = os.path.join(base_dir, config["workflow_file"])
             
         return config
-
+    
 class ComfyAPI:
     def __init__(self, server_address):
         self.server = server_address
@@ -142,7 +149,7 @@ class TelegramBot:
 
         # Inject the new prompt
         workflow[self.target_node_id]["inputs"]["text"] = user_prompt
-        self.send_message(chat_id, "Prompt accepted. Firing up the GPU... 🎨")
+        self.send_message(chat_id, "Prompt accepted. Firing up the GPU... 🚀")
 
         prompt_res = self.comfy.queue_prompt(workflow)
         
