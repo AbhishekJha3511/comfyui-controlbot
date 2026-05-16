@@ -1,0 +1,5 @@
+{
+  "telegram_token": "8676018916:AAGdpNim12-mi7TUjcIcIhDs27TfYsUzcYs",
+  "allowed_users": [123456789, 1343910579],
+  "comfy_host": "127.0.0.1:8188"
+}

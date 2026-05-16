@@ -1,190 +1,444 @@
 {
-  "6": {
+  "22": {
     "inputs": {
-      "text": "A cute cat wearing superman suit flying in sky",
-      "clip": [
-        "193",
+      "filename": "%time_%seed_Original",
+      "path": "FLUX/%date/",
+      "extension": "png",
+      "steps": [
+        "103",
         0
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "11": {
-    "inputs": {
-      "guidance": 2.5,
-      "conditioning": [
-        "6",
+      ],
+      "cfg": [
+        "25",
         0
-      ]
-    },
-    "class_type": "FluxGuidance",
-    "_meta": {
-      "title": "FluxGuidance"
-    }
-  },
-  "27": {
-    "inputs": {
-      "vae_name": "ae.safetensors"
-    },
-    "class_type": "VAELoader",
-    "_meta": {
-      "title": "Load VAE"
-    }
-  },
-  "51": {
-    "inputs": {
-      "seed": 244986678751713,
-      "steps": 20,
-      "cfg": 1,
-      "sampler_name": "dpmpp_2m",
-      "scheduler": "karras",
-      "denoise": 0.8000000000000002,
-      "model": [
-        "192",
+      ],
+      "modelname": [
+        "60",
+        0
+      ],
+      "sampler_name": [
+        "52",
+        0
+      ],
+      "scheduler_name": [
+        "53",
         0
       ],
       "positive": [
-        "11",
+        "31",
         0
       ],
-      "negative": [
-        "195",
+      "negative": "",
+      "seed_value": [
+        "47",
         0
       ],
-      "latent_image": [
-        "110",
+      "width": [
+        "32",
+        0
+      ],
+      "height": [
+        "32",
+        1
+      ],
+      "lossless_webp": true,
+      "quality_jpeg_or_webp": 100,
+      "optimize_png": false,
+      "counter": 0,
+      "denoise": 1,
+      "clip_skip": 0,
+      "time_format": "%Y-%m-%d-%H%M",
+      "save_workflow_as_json": false,
+      "embed_workflow": false,
+      "additional_hashes": "",
+      "download_civitai_data": true,
+      "easy_remix": true,
+      "show_preview": true,
+      "custom": "",
+      "images": [
+        "101",
         0
       ]
     },
-    "class_type": "KSampler",
+    "class_type": "Image Saver",
     "_meta": {
-      "title": "KSampler"
+      "title": "   Save original    "
     }
   },
-  "100": {
+  "25": {
     "inputs": {
-      "upscale_model": [
+      "Xi": 3,
+      "Xf": 3.5,
+      "isfloatX": 1
+    },
+    "class_type": "mxSlider",
+    "_meta": {
+      "title": "Guidance"
+    }
+  },
+  "31": {
+    "inputs": {
+      "string": ""
+    },
+    "class_type": "String Literal (Image Saver)",
+    "_meta": {
+      "title": "Positive"
+    }
+  },
+  "32": {
+    "inputs": {
+      "Xi": 1536,
+      "Xf": 1536,
+      "Yi": 1280,
+      "Yf": 1280,
+      "isfloatX": 0,
+      "isfloatY": 0
+    },
+    "class_type": "mxSlider2D",
+    "_meta": {
+      "title": "Image size"
+    }
+  },
+  "36": {
+    "inputs": {
+      "rgthree_comparer": {
+        "images": [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_hhnzp_00001_.png&type=temp&subfolder=&rand=0.17385626333350923"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_hhnzp_00002_.png&type=temp&subfolder=&rand=0.08982663966700533"
+          }
+        ]
+      },
+      "image_a": [
         "101",
         0
       ],
-      "image": [
-        "168",
+      "image_b": [
+        "37",
         0
       ]
     },
-    "class_type": "ImageUpscaleWithModel",
+    "class_type": "Image Comparer (rgthree)",
     "_meta": {
-      "title": "Upscale Image (using Model)"
+      "title": "Image Comparer"
     }
   },
-  "101": {
+  "37": {
+    "inputs": {
+      "upscale_by": [
+        "55",
+        0
+      ],
+      "seed": 389529163498209,
+      "steps": 8,
+      "cfg": 1,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 0.3500000000000001,
+      "mode_type": "Linear",
+      "tile_width": [
+        "32",
+        0
+      ],
+      "tile_height": [
+        "32",
+        1
+      ],
+      "mask_blur": 16,
+      "tile_padding": 32,
+      "seam_fix_mode": "None",
+      "seam_fix_denoise": 1,
+      "seam_fix_width": 64,
+      "seam_fix_mask_blur": 8,
+      "seam_fix_padding": 16,
+      "force_uniform_tiles": true,
+      "tiled_decode": false,
+      "batch_size": 1,
+      "image": [
+        "101",
+        0
+      ],
+      "model": [
+        "40",
+        0
+      ],
+      "positive": [
+        "98",
+        0
+      ],
+      "negative": [
+        "147",
+        0
+      ],
+      "vae": [
+        "150",
+        0
+      ],
+      "upscale_model": [
+        "38",
+        0
+      ]
+    },
+    "class_type": "UltimateSDUpscale",
+    "_meta": {
+      "title": "Image upscale"
+    }
+  },
+  "38": {
     "inputs": {
       "model_name": "4x_NMKD-Siax_200k.pth"
     },
     "class_type": "UpscaleModelLoader",
     "_meta": {
-      "title": "Load Upscale Model"
+      "title": "Upscale Model"
     }
   },
-  "102": {
+  "39": {
     "inputs": {
-      "upscale_method": "lanczos",
-      "scale_by": 0.5,
-      "image": [
-        "100",
-        0
-      ]
-    },
-    "class_type": "ImageScaleBy",
-    "_meta": {
-      "title": "Upscale Image By"
-    }
-  },
-  "110": {
-    "inputs": {
-      "pixels": [
-        "102",
+      "filename": "%time_%seed_Upscale",
+      "path": "FLUX/%date/",
+      "extension": "png",
+      "steps": [
+        "103",
         0
       ],
-      "vae": [
-        "27",
-        0
-      ]
-    },
-    "class_type": "VAEEncode",
-    "_meta": {
-      "title": "VAE Encode"
-    }
-  },
-  "111": {
-    "inputs": {
-      "samples": [
-        "51",
+      "cfg": [
+        "25",
         0
       ],
-      "vae": [
-        "27",
+      "modelname": [
+        "60",
         0
-      ]
-    },
-    "class_type": "VAEDecode",
-    "_meta": {
-      "title": "VAE Decode"
-    }
-  },
-  "144": {
-    "inputs": {
-      "anything": [
-        "111",
+      ],
+      "sampler_name": [
+        "52",
         0
-      ]
-    },
-    "class_type": "easy cleanGpuUsed",
-    "_meta": {
-      "title": "Clean VRAM Used"
-    }
-  },
-  "163": {
-    "inputs": {
-      "seed": 1112181939867456,
-      "steps": 20,
-      "cfg": 1,
-      "sampler_name": "euler",
-      "scheduler": "simple",
-      "denoise": 1,
-      "model": [
-        "192",
+      ],
+      "scheduler_name": [
+        "53",
         0
       ],
       "positive": [
-        "11",
+        "31",
         0
       ],
-      "negative": [
-        "195",
+      "negative": "",
+      "seed_value": [
+        "47",
         0
       ],
-      "latent_image": [
-        "208",
+      "width": [
+        "32",
+        0
+      ],
+      "height": [
+        "32",
+        1
+      ],
+      "lossless_webp": true,
+      "quality_jpeg_or_webp": 100,
+      "optimize_png": false,
+      "counter": 0,
+      "denoise": 1,
+      "clip_skip": 0,
+      "time_format": "%Y-%m-%d-%H%M",
+      "save_workflow_as_json": false,
+      "embed_workflow": false,
+      "additional_hashes": "",
+      "download_civitai_data": true,
+      "easy_remix": true,
+      "show_preview": true,
+      "custom": "",
+      "images": [
+        "37",
         0
       ]
     },
-    "class_type": "KSampler",
+    "class_type": "Image Saver",
     "_meta": {
-      "title": "KSampler"
+      "title": " Save upscale "
     }
   },
-  "164": {
+  "40": {
+    "inputs": {
+      "PowerLoraLoaderHeaderWidget": {
+        "type": "PowerLoraLoaderHeaderWidget"
+      },
+      "➕ Add Lora": "",
+      "model": [
+        "148",
+        0
+      ],
+      "clip": [
+        "149",
+        0
+      ]
+    },
+    "class_type": "Power Lora Loader (rgthree)",
+    "_meta": {
+      "title": "LoRA"
+    }
+  },
+  "47": {
+    "inputs": {
+      "seed": 330779787921512,
+      "increment": 0
+    },
+    "class_type": "Seed Generator (Image Saver)",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "48": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "Sampler"
+    }
+  },
+  "52": {
+    "inputs": {
+      "id": 0,
+      "widget_name": "sampler_name",
+      "return_all": false,
+      "node_title": "",
+      "allowed_float_decimals": 2,
+      "any_input": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "WidgetToString",
+    "_meta": {
+      "title": "getSampler"
+    }
+  },
+  "53": {
+    "inputs": {
+      "id": 0,
+      "widget_name": "scheduler",
+      "return_all": false,
+      "node_title": "",
+      "allowed_float_decimals": 2,
+      "any_input": [
+        "59",
+        0
+      ]
+    },
+    "class_type": "WidgetToString",
+    "_meta": {
+      "title": "getScheduler"
+    }
+  },
+  "55": {
+    "inputs": {
+      "Xi": 2,
+      "Xf": 2,
+      "isfloatX": 1
+    },
+    "class_type": "mxSlider",
+    "_meta": {
+      "title": "Upscale ratio"
+    }
+  },
+  "59": {
+    "inputs": {
+      "scheduler": "normal",
+      "steps": 30,
+      "denoise": 1,
+      "model": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "Scheduler"
+    }
+  },
+  "60": {
+    "inputs": {
+      "id": 0,
+      "widget_name": "unet_name",
+      "return_all": false,
+      "node_title": "",
+      "allowed_float_decimals": 2,
+      "any_input": [
+        "148",
+        0
+      ]
+    },
+    "class_type": "WidgetToString",
+    "_meta": {
+      "title": "getModelname"
+    }
+  },
+  "89": {
+    "inputs": {
+      "id": 0,
+      "widget_name": "steps",
+      "return_all": false,
+      "node_title": "",
+      "allowed_float_decimals": 2,
+      "any_input": [
+        "59",
+        0
+      ]
+    },
+    "class_type": "WidgetToString",
+    "_meta": {
+      "title": "getSteps"
+    }
+  },
+  "97": {
+    "inputs": {
+      "width": [
+        "32",
+        0
+      ],
+      "height": [
+        "32",
+        1
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "98": {
+    "inputs": {
+      "text": [
+        "31",
+        0
+      ],
+      "clip": [
+        "40",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Positive Text Encode"
+    }
+  },
+  "101": {
     "inputs": {
       "samples": [
-        "163",
+        "153",
         0
       ],
       "vae": [
-        "27",
+        "150",
         0
       ]
     },
@@ -193,57 +447,34 @@
       "title": "VAE Decode"
     }
   },
-  "168": {
+  "103": {
     "inputs": {
-      "anything": [
-        "164",
+      "number": [
+        "104",
         0
       ]
     },
-    "class_type": "easy cleanGpuUsed",
+    "class_type": "Number to Int",
     "_meta": {
-      "title": "Clean VRAM Used"
+      "title": "Number to Int"
     }
   },
-  "170": {
+  "104": {
     "inputs": {
-      "filename_prefix": "Flux Kontext/Img/UP",
-      "images": [
-        "111",
+      "text": [
+        "89",
         0
       ]
     },
-    "class_type": "SaveImage",
+    "class_type": "Text to Number",
     "_meta": {
-      "title": "Save Image UPSCALED"
+      "title": "Text to Number"
     }
   },
-  "192": {
-    "inputs": {
-      "unet_name": "flux1-dev-kontext_fp8_scaled.safetensors",
-      "weight_dtype": "default"
-    },
-    "class_type": "UNETLoader",
-    "_meta": {
-      "title": "Load Diffusion Model"
-    }
-  },
-  "193": {
-    "inputs": {
-      "clip_name1": "clip_l.safetensors",
-      "clip_name2": "t5xxl_fp8_e4m3fn_scaled.safetensors",
-      "type": "flux",
-      "device": "default"
-    },
-    "class_type": "DualCLIPLoader",
-    "_meta": {
-      "title": "DualCLIPLoader"
-    }
-  },
-  "195": {
+  "147": {
     "inputs": {
       "conditioning": [
-        "6",
+        "98",
         0
       ]
     },
@@ -252,47 +483,107 @@
       "title": "ConditioningZeroOut"
     }
   },
-  "208": {
+  "148": {
     "inputs": {
-      "width": 1024,
-      "height": 1024,
-      "batch_size": 1
+      "unet_name": "flux1-dev-kontext_fp8_scaled.safetensors",
+      "weight_dtype": "default"
     },
-    "class_type": "EmptySD3LatentImage",
+    "class_type": "UNETLoader",
     "_meta": {
-      "title": "EmptySD3LatentImage"
+      "title": "Model"
     }
   },
-  "212": {
+  "149": {
     "inputs": {
-      "filename_prefix": "ComfyUI",
-      "images": [
-        "164",
-        0
-      ]
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+      "type": "flux",
+      "device": "default"
     },
-    "class_type": "SaveImage",
+    "class_type": "DualCLIPLoader",
     "_meta": {
-      "title": "Save Image Original"
+      "title": "CLIP"
     }
   },
-  "213": {
+  "150": {
     "inputs": {
-      "rgthree_comparer": {
-        "images": []
-      },
-      "image_a": [
-        "164",
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "VAE"
+    }
+  },
+  "153": {
+    "inputs": {
+      "noise": [
+        "155",
         0
       ],
-      "image_b": [
-        "111",
+      "guider": [
+        "154",
+        0
+      ],
+      "sampler": [
+        "48",
+        0
+      ],
+      "sigmas": [
+        "59",
+        0
+      ],
+      "latent_image": [
+        "97",
         0
       ]
     },
-    "class_type": "Image Comparer (rgthree)",
+    "class_type": "SamplerCustomAdvanced",
     "_meta": {
-      "title": "Image Comparer (rgthree)"
+      "title": "Sampler"
+    }
+  },
+  "154": {
+    "inputs": {
+      "model": [
+        "40",
+        0
+      ],
+      "conditioning": [
+        "156",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "BasicGuider"
+    }
+  },
+  "155": {
+    "inputs": {
+      "noise_seed": [
+        "47",
+        0
+      ]
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "156": {
+    "inputs": {
+      "guidance": [
+        "25",
+        0
+      ],
+      "conditioning": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
     }
   }
 }

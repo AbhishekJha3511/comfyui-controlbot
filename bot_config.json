@@ -7,5 +7,5 @@
     ],
     "comfyui_server": "127.0.0.1:8188",
     "workflow_file": "workflow_api.json",
-    "target_text_node_id": "6"
+    "target_text_node_id": "4"
 }
